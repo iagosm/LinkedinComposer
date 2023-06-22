@@ -1,14 +1,15 @@
 <?php
 require_once 'config.php';
- 
+ //login linkedin
 try {
     $adapter->authenticate();
     $userProfile = $adapter->getUserProfile();
     $idLinkedin = $userProfile->identifier;
     $emailLinkedin = $userProfile->email;
 
-    echo $idLinkedin . "<br>";
-    echo $emailLinkedin . "<br>";
+    print_r($userProfile);
+    // echo $idLinkedin . "<br>";
+    // echo $emailLinkedin . "<br>";
     echo '<a href="logout.php">Logout</a>';
 }
 catch( Exception $e ){
